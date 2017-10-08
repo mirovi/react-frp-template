@@ -1,0 +1,39 @@
+@import 'variables';
+
+$width: 1px;
+$color: $color-grey-lightest;
+$color-darker: $color-grey-lighter;
+
+:global {
+    .border--default {
+        border: $width solid $color !important;
+    }
+
+    .border--darker {
+        border: $width solid $color-darker !important;
+    }
+
+    .border--error {
+        border: $width solid $color-red !important;
+    }
+
+    .border--transparent {
+        border: $width solid transparent !important;
+    }
+
+    .border--top {
+        border-top: $width solid $color !important;
+    }
+
+    .border--bottom {
+        border-bottom: $width solid $color !important;
+    }
+
+    .border--left {
+        border-left: $width solid $color !important;
+    }
+
+    .border--right {
+        border-right: $width solid $color !important;
+    }
+}

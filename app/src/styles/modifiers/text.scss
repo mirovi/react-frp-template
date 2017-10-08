@@ -1,0 +1,80 @@
+@import 'variables';
+
+:global {
+    .text--align-center {
+        text-align: center !important;
+    }
+
+    .text--align-left {
+        text-align: left !important;
+    }
+
+    .text--align-right {
+        text-align: right !important;
+    }
+
+    .text--uppercase {
+        letter-spacing: 1px;
+        text-transform: uppercase !important;
+    }
+
+    .text--lowercase {
+        text-transform: lowercase !important;
+    }
+
+    .text--capitalize {
+        text-transform: capitalize !important;
+    }
+
+    .text--italic {
+        font-style: italic !important;
+    }
+
+    .text--regular {
+        font-weight: 400 !important;
+    }
+
+    .text--demibold {
+        font-weight: 500 !important;
+    }
+
+    .text--bold {
+        font-weight: 600 !important;
+    }
+
+    .text--underline {
+        text-decoration: underline !important;
+    }
+
+    .text--strike-through {
+        text-decoration: line-through !important;
+    }
+
+    .line-height--self {
+        line-height: 1em !important;
+    }
+
+    .line-height--body {
+        line-height: $line-height-body !important;
+    }
+
+    .line-height--input {
+        line-height: $input-height !important;
+    }
+
+    .line-height--input-compact {
+        line-height: $input-height-compact !important;
+    }
+
+    .text--body-small {
+        font-size: $type-body-small !important;
+    }
+
+    .noselect {
+        user-select: none !important;
+    }
+
+    .overflow--break-word {
+        overflow-wrap: break-word !important;
+    }
+}

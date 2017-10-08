@@ -1,0 +1,25 @@
+@import 'variables';
+
+@mixin respond-above($breakpoint) {
+    $value: map-get($breakpoints, $breakpoint);
+
+    @if $value != null {
+        @media (min-width: $value) {
+            @content;
+        }
+    } @else {
+        @warn 'No value found for `#{$breakpoint}`. ' + 'Please make sure it is defined in `$breakpoints` map.';
+    }
+}
+
+@mixin respond-below($breakpoint) {
+    $value: map-get($breakpoints, $breakpoint);
+
+    @if $value != null {
+        @media (max-width: #{$value + 1px}) {
+            @content;
+        }
+    } @else {
+        @warn 'No value found for `#{$breakpoint}`. ' + 'Please make sure it is defined in `$breakpoints` map.';
+    }
+}

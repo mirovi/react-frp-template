@@ -1,0 +1,21 @@
+{
+    "name": "server-side",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/mirovi/react-frp-template.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/mirovi/react-frp-template/issues"
+    },
+    "homepage": "https://github.com/mirovi/react-frp-template#readme",
+    "dependencies": {
+    }
+  }

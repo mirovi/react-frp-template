@@ -1,0 +1,111 @@
+@import 'variables';
+@import 'mixins/breakpoints';
+
+:global {
+    html {
+        font-family: 'Avenir Next';
+        font-weight: 400;
+        font-size: $size-base;
+
+        @include respond-above('sm') {
+            font-size: $size-base-sm;
+        }
+
+        @include respond-above('md') {
+            font-size: $size-base-md;
+        }
+
+        @include respond-above('lg') {
+            font-size: $size-base-lg;
+        }
+
+        @include respond-above('xl') {
+            font-size: $size-base-xl;
+        }
+    }
+
+    body {
+        color: $color-dark;
+        font-size: $type-body;
+        line-height: $line-height-body;
+    }
+
+    h1,
+    .h1 {
+        font-size: $type-large;
+        line-height: 1.3;
+    }
+
+    h2,
+    .h2 {
+        font-size: $type-mlarge;
+        line-height: 1.3;
+    }
+
+    h3,
+    .h3 {
+        font-size: $type-body;
+        line-height: 1.5;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: $type-body;
+        line-height: $line-height-body;
+        margin: 0;
+    }
+
+    a {
+        color: $color-blue;
+        text-decoration: none;
+
+        &:hover {
+            color: $color-green;
+        }
+    }
+
+    .type--regular {
+        font-weight: 500;
+    }
+
+    strong,
+    .type--demibold {
+        font-weight: 600;
+    }
+
+    .type--xlarge {
+        font-size: $type-xlarge;
+    }
+
+    .type--large {
+        font-size: $type-large;
+    }
+
+    .type--body {
+        font-size: $type-body;
+    }
+
+    .type--body-small {
+        font-size: $type-body-small;
+    }
+
+    small,
+    .type--small {
+        line-height: 1.3em;
+        font-size: $type-small;
+    }
+
+    .type--xsmall {
+        font-size: $type-xsmall;
+    }
+
+    .type--xsmall-upper {
+        font-size: $type-xsmall-upper;
+    }
+
+    .type--footnote {
+        color: $color-grey;
+        font-size: $type-body-small;
+        font-style: italic;
+    }
+}

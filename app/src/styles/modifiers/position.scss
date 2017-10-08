@@ -1,0 +1,20 @@
+@import 'variables';
+
+:global {
+    .position--relative {
+        position: relative !important;
+    }
+
+    .position--absolute {
+        position: absolute !important;
+    }
+
+    .top--zero {
+        top: 0 !important;
+    }
+
+    .right--zero {
+        right: 0 !important;
+    }
+
+}

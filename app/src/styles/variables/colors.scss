@@ -1,0 +1,43 @@
+$color-black: #000;
+$color-dark: #333;
+
+$color-grey-dark: #666666;
+$color-grey: #999999;
+$color-grey-light: #B3B3B3;
+$color-grey-lighter: #E0E0E0;
+$color-grey-lightest: #f4f4f4;
+
+$color-white: #fff;
+$color-white-dark: #f9f9f9;
+
+$color-green: #41BA5D;
+$color-green-light: #CDDA49;
+$color-green-alt: #159588;
+
+$color-orange: #FF860D;
+$color-yellow: #FFC44D;
+
+$color-red: #E62565;
+$color-red-light: #E66787;
+
+$color-purple: #8A47CC;
+$color-purple-light: #D1A3D9;
+
+$color-brown: #8F5A49;
+$color-brown-light: #E0B887;
+
+$color-blue: #0076cf;
+$color-blue-light: #ECF4FA;
+$color-turquoise: #67E6DB;
+
+$color-transparent: transparent;
+
+// modifiers for dimming colors
+
+$color-dim-modifier: 0.5;
+$color-dim-strong-modifier: 0.1;
+
+// dimmed colors
+
+$color-white-dimmed: rgba($color-white, $color-dim-modifier);
+$color-white-dimmed-strong: rgba($color-white, $color-dim-strong-modifier);

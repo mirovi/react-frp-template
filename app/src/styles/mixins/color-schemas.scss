@@ -1,0 +1,9 @@
+@mixin color-schema($schema) {
+    :global(.color-schema--#{$schema}),
+    :global([class*='color-schema--'] .color-schema--#{$schema}),
+    :global([class*='color-schema--'] [class*='color-schema--'] .color-schema--#{$schema}),
+    :global([class*='color-schema--'] [class*='color-schema--'] [class*='color-schema--'] .color-schema--#{$schema}),
+    :global([class*='color-schema--'] [class*='color-schema--'] [class*='color-schema--'] [class*='color-schema--'] .color-schema--#{$schema}) {
+        @content;
+    }
+}

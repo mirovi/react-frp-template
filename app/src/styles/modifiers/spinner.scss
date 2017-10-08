@@ -1,0 +1,64 @@
+@import 'variables';
+
+:global {
+    .spinner {
+        $animation-duration: 1.4s;
+        $delayrange: 0.32s;
+        $bounce-size: 36px;
+
+        position: fixed;
+        top: calc(50vh - 9px);
+        right: calc(50vw - 36px);
+        height: $bounce-size / 2;
+        width: $bounce-size * 2;
+        text-align: center;
+
+        z-index: 999999;
+
+        .bounce1, .bounce2, .bounce3 {
+            width: $bounce-size / 2;
+            height: $bounce-size / 2;
+            background-color: $color-blue;
+
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .bounce1 {
+            animation-delay: - $delayrange;
+        }
+
+        .bounce2 {
+            animation-delay: - $delayrange / 2;
+        }
+
+        /* stylelint-disable */
+        .bounce1, .bounce2, .bounce3 {
+            animation-name: scale-animation;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            animation-duration: $animation-duration;
+            animation-fill-mode: both;
+            animation-play-state: running;
+        }
+
+        @keyframes :global(scale-animation) {
+            0% {
+                transform: scale(0);
+            }
+
+            40% {
+                transform: scale(1);
+            }
+
+            80% {
+                transform: scale(0);
+            }
+
+            100% {
+                transform: scale(0);
+            }
+        }
+        /* stylelint-enable */
+    }
+}

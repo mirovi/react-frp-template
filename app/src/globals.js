@@ -11,11 +11,6 @@ Promise.config({
     monitoring: process.env.NODE_ENV === 'development'
 })
 
-const log = (value, logType = 'log') => {
-    console[logType](value) // eslint-disable-line no-console
-    return value
-}
-
 const consoleLog = U.lift((val) => console.log(val) || val) // eslint-disable-line no-console
 
 global.Promise = Promise

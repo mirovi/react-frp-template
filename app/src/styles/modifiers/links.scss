@@ -1,0 +1,9 @@
+:global {
+    .link--touch {
+        display: flex;
+        width: $link-touch-size;
+        height: $link-touch-size;
+        align-items: center;
+        justify-content: center;
+    }
+}

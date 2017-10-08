@@ -1,0 +1,81 @@
+@import 'variables';
+@import 'mixins/color-schemas';
+
+$button-disabled-color: rgba($color-white, $color-dim-modifier);
+$button-alternative-disabled-bg: rgba($color-white, $color-dim-strong-modifier);
+
+.button {
+    font-size: 1.5rem;
+    background: $color-evli-blue;
+    color: $color-white;
+    padding: $size-medium $size-large;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 2px;
+    user-select: none;
+
+    &.outlined {
+        background: transparent;
+        color: $color-evli-blue;
+        font-weight: 500;
+        border: 2px solid $color-evli-blue;
+    }
+
+    &.round {
+        border-radius: $size-large;
+    }
+
+    &.fullWidth {
+        width: 100%;
+    }
+
+    &.noPadding {
+        padding: 0;
+    }
+
+    &.alternative {
+        background: $color-green-alt;
+    }
+
+    &.compact {
+        padding: $size-msmall $size-medium;
+    }
+
+    &.brown {
+        background-color: $color-brown-light;
+        color: $color-white;
+    }
+
+    &:disabled {
+        cursor: default;
+        background-color: $color-grey;
+        color: $button-disabled-color;
+    }
+
+    .content {
+        position: relative;
+        display: inline-block;
+    }
+
+    .loader {
+        position: absolute;
+        left: -30px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@include color-schema('default') {
+    .button:disabled {
+        background-color: $color-grey;
+        color: $button-disabled-color;
+    }
+}
+
+@include color-schema('alternative') {
+    .button:disabled {
+        background-color: $button-alternative-disabled-bg;
+        color: $button-disabled-color;
+    }
+}

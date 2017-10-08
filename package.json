@@ -2,7 +2,7 @@
   "name": "react-frp-template",
   "version": "1.0.0",
   "description": "",
-  "main": "webpack.config.js",
+  "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,9 +17,5 @@
   },
   "homepage": "https://github.com/mirovi/react-frp-template#readme",
   "dependencies": {
-    "kefir": "^3.7.4",
-    "ramda": "^0.24.1",
-    "react": "^16.0.0",
-    "react-router": "^4.2.0"
   }
 }

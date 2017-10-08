@@ -1,0 +1,38 @@
+@import 'variables';
+@import 'modifiers';
+@import 'core/normalize';
+@import 'core/typography';
+@import 'mixins/breakpoints';
+@import 'layout/grid';
+@import 'layout/color-schemas';
+
+:global {
+    html, body {
+        background: $color-grey-lighter;
+    }
+
+    .app {
+        display: flex;
+    }
+
+    .app--blurred {
+        filter: blur(3px);
+    }
+
+    .app--grayscale {
+        filter: grayscale(100%);
+    }
+
+    .app-root {
+        display: flex;
+        flex: 1 1 auto;
+        min-height: 100vh;
+    }
+
+    /* reason: we want all elements to be border-box */
+    /* stylelint-disable */
+    * {
+        box-sizing: border-box;
+    }
+    /* stylelint-enable */
+}
