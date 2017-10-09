@@ -1,17 +1,19 @@
-import className from 'utils/component/className'
+import className from 'utils/components/className'
 import styles from './button.scss'
 
 const c = className(styles)
 
-const Button = ({ children, outlined, round, fullWidth, noPadding, onClick, type = 'button', disabled, alternative, compact, brown, loading }) => (
+const Button = ({ children, outlined, round, fullWidth, noPadding, onClick, type = 'button', disabled, alternative, compact, brown }) => (
     <button
-        className={c('button', { outlined, round, noPadding, fullWidth, alternative, compact, brown })}
+        className={c('button', {
+            outlined, round, noPadding, fullWidth, alternative, compact, brown
+        })}
         onClick={onClick}
         type={type}
         disabled={disabled}>
-            <div className={c('content')}>
-                {children}
-            </div>
+        <div className={c('content')}>
+            {children}
+        </div>
     </button>
 )
 

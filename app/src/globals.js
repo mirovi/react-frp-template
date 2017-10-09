@@ -1,4 +1,4 @@
-import React from 'karet'
+import * as React from 'karet'
 import R from 'ramda'
 import Kefir from 'kefir'
 import K, * as U from 'karet.util'
@@ -19,5 +19,4 @@ global.R = R
 global.Kefir = Kefir
 global.K = K
 global.U = U
-global.log = log
 global.U.consoleLog = consoleLog

@@ -4,7 +4,7 @@
  *
  * output -> 'foo123uHash global--class foo'
  */
-export default className = (styles = {}) => (...args) =>
+const className = (styles = {}) => (...args) =>
     K(...args, (...clss) => {
         const classes = clss.map((cls) => typeof cls === 'string'
             ? styles[cls] || cls
@@ -18,3 +18,5 @@ export default className = (styles = {}) => (...args) =>
 
         return U.join(' ', U.flatten(classes))
     })
+
+export default className

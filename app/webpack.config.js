@@ -16,7 +16,7 @@ const isTestServer = (SERVER === 'test')
 const isProductionServer = (SERVER === 'production')
 
 // Site Paths
-const localhostPath = 'http://localhost:8080/'
+const localhostPath = 'http://localhost:8989/'
 const devPath = 'http://dev.site.com/'
 const testPath = 'http://test.site.com/'
 const prodPath = 'http://www.site.com/'
@@ -34,7 +34,7 @@ const publicPath = isProductionEnv
 const entry = {
     development: [
             'react-hot-loader/patch',
-            'webpack-dev-server/client?http://0.0.0.0:8080',
+            'webpack-dev-server/client?http://0.0.0.0:8989',
             'webpack/hot/only-dev-server',
             './src/index.js'
     ],
@@ -45,6 +45,11 @@ const entry = {
 const devtool = {
     development: 'cheap-module-eval-source-map',
     production: 'cheap-module-source-map'
+}
+
+const processEnv = {
+    NODE_ENV: JSON.stringify(ENV),
+    SERVER: JSON.stringify(SERVER)
 }
 
 // Env specific plugins
@@ -105,11 +110,6 @@ const plugins = {
     ]
 }
 
-const processEnv = {
-    NODE_ENV: JSON.stringify(ENV),
-    SERVER: JSON.stringify(SERVER)
-}
-
 module.exports = {
     entry: {
         bundle: entry[ENV]
@@ -129,7 +129,7 @@ module.exports = {
         alias: {
             '@Login': path.resolve(__dirname, 'src/features/login'),
             '@FrontPage': path.resolve(__dirname, 'src/features/front-page'),
-            '@Commons': path.resolve(__dirname, '../commons/src/')
+            '@Commons': path.resolve(__dirname, '../commons/src')
         }
     },
     module: {
@@ -166,7 +166,10 @@ module.exports = {
                                 localIdentName: '[local]___[hash:base64:5]'
                             }
                         }, {
-                            loader: 'postcss-loader'
+                            loader: 'postcss-loader',
+                            options: {
+                                sourceMap: true
+                            }
                         }, {
                             loader: 'sass-loader',
                             options: {
@@ -186,11 +189,6 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: '!!ejs-loader!src/index.ejs'
-        }),
-        new HtmlWebpackPlugin({
-            template: '!!ejs-loader!src/hub.ejs',
-            filename: 'hub.html',
-            inject: false
         }),
         new CopyWebpackPlugin([
             { from: path.join(__dirname, 'src', 'assets', 'images'), to: path.join(__dirname, 'dist', 'assets', 'images') }
@@ -212,16 +210,23 @@ module.exports = {
     ].concat(plugins[ENV]),
     devServer: {
         host: '0.0.0.0',
+        port: '8989',
         hot: true,
         contentBase: path.join(__dirname, 'dist'),
         watchOptions: {
             aggregateTimeout: 300,
             poll: 1000
         },
+        headers: { "Access-Control-Allow-Origin": "*" },
         proxy: {
             '/api/mock': {
-                target: 'http://localhost:8090/',
+                target: 'http://localhost:8990/',
                 pathRewrite: { '^/api/mock' : '/api' },
+                secure: false
+            },
+            '/public': {
+                target: 'http://localhost:8989/',
+                pathRewrite: { '^/public' : '/' },
                 secure: false
             }
         },

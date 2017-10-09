@@ -1,12 +1,11 @@
 @import 'variables';
-@import 'mixins/color-schemas';
 
 $button-disabled-color: rgba($color-white, $color-dim-modifier);
 $button-alternative-disabled-bg: rgba($color-white, $color-dim-strong-modifier);
 
 .button {
     font-size: 1.5rem;
-    background: $color-evli-blue;
+    background: $color-blue;
     color: $color-white;
     padding: $size-medium $size-large;
     cursor: pointer;
@@ -14,20 +13,17 @@ $button-alternative-disabled-bg: rgba($color-white, $color-dim-strong-modifier);
     border: none;
     border-radius: 2px;
     user-select: none;
+    width: 100%;
 
     &.outlined {
         background: transparent;
-        color: $color-evli-blue;
+        color: $color-blue;
         font-weight: 500;
-        border: 2px solid $color-evli-blue;
+        border: 2px solid $color-blue;
     }
 
     &.round {
         border-radius: $size-large;
-    }
-
-    &.fullWidth {
-        width: 100%;
     }
 
     &.noPadding {
@@ -63,19 +59,5 @@ $button-alternative-disabled-bg: rgba($color-white, $color-dim-strong-modifier);
         left: -30px;
         top: 50%;
         transform: translateY(-50%);
-    }
-}
-
-@include color-schema('default') {
-    .button:disabled {
-        background-color: $color-grey;
-        color: $button-disabled-color;
-    }
-}
-
-@include color-schema('alternative') {
-    .button:disabled {
-        background-color: $button-alternative-disabled-bg;
-        color: $button-disabled-color;
     }
 }
